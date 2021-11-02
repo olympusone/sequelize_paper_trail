@@ -1,30 +1,21 @@
 # Sequelize Paper Trail
 
-
----
-
-> **Help wanted:** *Please try out `sequelize-paper-trail@3.0.0-rc.6` and give a 👍/👎 [here](https://github.com/nielsgl/sequelize-paper-trail/pull/74) if it works as expected.*
-
----
-
-
 > Track changes to your models, for auditing or versioning. See how a model looked at any stage in its lifecycle, revert it to any version, or restore it after it has been destroyed. Record the user who created the version.
 
 
+<!-- [![NPM](https://nodei.co/npm/sequelize_paper_trail.png?downloads=true)](https://nodei.co/npm/sequelize_paper_trail/) -->
 
-<!-- [![NPM](https://nodei.co/npm/sequelize-paper-trail.png?downloads=true)](https://nodei.co/npm/sequelize-paper-trail/) -->
+[![node-version](https://img.shields.io/node/v/sequelize_paper_trail.svg)](https://www.npmjs.org/package/sequelize_paper_trail)
+[![npm-version](https://img.shields.io/npm/v/sequelize_paper_trail.svg)](https://www.npmjs.org/package/sequelize_paper_trail)
+[![David](https://img.shields.io/david/olympusone/sequelize_paper_trail.svg?maxAge=3600)]()
+[![David](https://img.shields.io/david/dev/olympusone/sequelize_paper_trail.svg?maxAge=3600)]()
 
-[![node-version](https://img.shields.io/node/v/sequelize-paper-trail.svg)](https://www.npmjs.org/package/sequelize-paper-trail)
-[![npm-version](https://img.shields.io/npm/v/sequelize-paper-trail.svg)](https://www.npmjs.org/package/sequelize-paper-trail)
-[![David](https://img.shields.io/david/nielsgl/sequelize-paper-trail.svg?maxAge=3600)]()
-[![David](https://img.shields.io/david/dev/nielsgl/sequelize-paper-trail.svg?maxAge=3600)]()
+[![GitHub release](https://img.shields.io/github/release/olympusone/sequelize_paper_trail.svg)](https://www.npmjs.org/package/sequelize_paper_trail)
+[![GitHub tag](https://img.shields.io/github/tag/olympusone/sequelize_paper_trail.svg)](https://www.npmjs.org/package/sequelize_paper_trail)
+[![GitHub commits](https://img.shields.io/github/commits-since/olympusone/sequelize_paper_trail/1.2.0.svg)]()
+[![npm-downloads](https://img.shields.io/npm/dt/sequelize_paper_trail.svg)](https://www.npmjs.org/package/sequelize_paper_trail)
 
-[![GitHub release](https://img.shields.io/github/release/nielsgl/sequelize-paper-trail.svg)](https://www.npmjs.org/package/sequelize-paper-trail)
-[![GitHub tag](https://img.shields.io/github/tag/nielsgl/sequelize-paper-trail.svg)](https://www.npmjs.org/package/sequelize-paper-trail)
-[![GitHub commits](https://img.shields.io/github/commits-since/nielsgl/sequelize-paper-trail/1.2.0.svg)]()
-[![npm-downloads](https://img.shields.io/npm/dt/sequelize-paper-trail.svg)](https://www.npmjs.org/package/sequelize-paper-trail)
-
-[![license](https://img.shields.io/github/license/nielsgl/sequelize-paper-trail.svg)](https://github.com/nielsgl/sequelize-paper-trail/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/olympusone/sequelize_paper_trail.svg)](https://github.com/olympusone/sequelize_paper_trail/blob/master/LICENSE)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -53,9 +44,9 @@
 ## Installation
 
 ```bash
-npm install --save sequelize-paper-trail
+npm install --save sequelize_paper_trail
 # or with yarn:
-# yarn add sequelize-paper-trail
+# yarn add sequelize_paper_trail
 ```
 
 *Note: the current test suite is very limited in coverage.*
@@ -71,7 +62,7 @@ const sequelize = new Sequelize('database', 'username', 'password');
 then adding Sequelize Paper Trail is as easy as:
 
 ```javascript
-const PaperTrail = require('sequelize-paper-trail').init(sequelize, options);
+const PaperTrail = require('sequelize_paper_trail').init(sequelize, options);
 PaperTrail.defineModels();
 ```
 
@@ -93,7 +84,7 @@ Model.hasPaperTrail();
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('database', 'username', 'password');
 
-const PaperTrail = require('sequelize-paper-trail').init(sequelize, options || {});
+const PaperTrail = require('sequelize_paper_trail').init(sequelize, options || {});
 PaperTrail.defineModels();
 
 const User = sequelize.define('User', {
@@ -115,7 +106,7 @@ const options = {
   userModel: 'user',
 };
 ```
-2. Pass the id of the user who is responsible for the database operation to `sequelize-paper-trail` either by sequelize options or by using [continuation-local-storage](https://www.npmjs.com/package/continuation-local-storage).
+2. Pass the id of the user who is responsible for the database operation to `sequelize_paper_trail` either by sequelize options or by using [continuation-local-storage](https://www.npmjs.com/package/continuation-local-storage).
 
 ```javascript
 Model.update({
@@ -174,16 +165,15 @@ const options = {
     'updated_at',
     'deleted_at'
   ],
-  revisionAttribute: 'revision',
-  revisionModel: 'Revision',
+  versionModel: 'Version',
   revisionChangeModel: 'RevisionChange',
   enableRevisionChangeModel: false,
   UUID: false,
   underscored: false,
   underscoredAttributes: false,
   defaultAttributes: {
-    documentId: 'documentId',
-    revisionId: 'revisionId'
+    itemId: 'itemId',
+    itemType: 'itemType'
   },
   enableCompression: false,
   enableMigration: false,
@@ -237,7 +227,7 @@ npm test
 ## Support
 
 Please use:
-* GitHub's [issue tracker](https://github.com/nielsgl/sequelize-paper-trail/issues)
+* GitHub's [issue tracker](https://github.com/olympusone/sequelize_paper_trail/issues)
 
 ## Contributing
 
@@ -249,18 +239,19 @@ Please use:
 
 ## Author
 
-© [Niels van Galen Last](https://nielsgl.com) – [@nielsgl](https://twitter.com/nielsgl) – nvangalenlast@gmail.com
+© [OlympusOne](https://olympusone.com) – [@olympusone](https://twitter.com/olympusone01) – support@olympusone.com
 Distributed under the MIT license. See ``LICENSE`` for more information.
-[https://github.com/nielsgl/sequelize-paper-trail](https://github.com/nielsgl/)
+[https://github.com/olympusone/sequelize_paper_trail](https://github.com/olympusone/)
 
 ## Thanks
 
 This project was inspired by:
+* [Sequelize Paper Trail](https://github.com/nielsgl/sequelize-paper-trail)
 * [Sequelize-Revisions](https://github.com/bkniffler/sequelize-revisions)
 * [Paper Trail](https://github.com/airblade/paper_trail)
 
 Contributors:
- [https://github.com/nielsgl/sequelize-paper-trail/graphs/contributors](https://github.com/nielsgl/sequelize-paper-trail/graphs/contributors)
+ [https://github.com/olympusone/sequelize_paper_trail/graphs/contributors](https://github.com/olympusone/sequelize_paper_trail/graphs/contributors)
 
 ## Links
-* [Example application](https://github.com/nielsgl/sequelize-paper-trail-example)
+* [Example application](https://github.com/olympusone/sequelize_paper_trail-example)

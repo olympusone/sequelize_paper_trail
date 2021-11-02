@@ -10,7 +10,6 @@ let PaperTrails;
 
 describe('import', () => {
 	it('loads the library', () => {
-		// console.log(helpers);
 		expect(true).toEqual(true);
 	});
 });
@@ -22,38 +21,40 @@ describe('PaperTrails', () => {
 		});
 		PaperTrails.defineModels();
 		User = sequelize.model('User');
-		User.Revisions = User.hasPaperTrail();
+		User.Versions = User.hasPaperTrail();
 		User.refreshAttributes();
 	});
 
-	it('model is revisionable', () => {
+	it('model is versionable', () => {
 		expect.assertions(1);
 
-		expect(User.revisionable).toEqual(true);
+		expect(User.versionable).toEqual(true);
 	});
 
-	describe('sets the revision for a model', () => {
+	describe('sets the version for a model', () => {
 		it('creates the user', async () => {
 			expect.assertions(1);
 
 			const [user, created] = await User.findOrCreate({
 				where: { name: 'Dave' },
 			});
+
 			console.log('user', created);
 
 			expect(created).toEqual(true);
 		});
 
-		it('is the first revision', async () => {
+		it('is the first version', async () => {
 			expect.assertions(1);
 
 			const res = await User.findOrCreate({
 				where: { name: 'Dave' },
 			});
 
-			expect(res[0].get('revision')).toEqual(1);
+			expect(res[0].get('version')).toEqual(1);
 		});
-		it('increments the revision', async () => {
+		
+		it('increments the version', async () => {
 			expect.assertions(1);
 
 			// eslint-disable-next-line prefer-const
@@ -65,7 +66,7 @@ describe('PaperTrails', () => {
 				.update({ name: 'David' })
 				.then(() => user.reload());
 
-			expect(user.get('revision')).toEqual(2);
+			expect(user.get('version')).toEqual(2);
 		});
 	});
 });
