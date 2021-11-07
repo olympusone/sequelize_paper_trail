@@ -1,5 +1,5 @@
 {
-	"name": "sequelize_paper_trail",
+	"name": "@olympusone/sequelize_paper_trail",
 	"version": "0.0.1",
 	"description": "Track changes to your Sequelize models data",
 	"author": {

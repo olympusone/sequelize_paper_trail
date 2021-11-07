@@ -3,13 +3,13 @@
 > Track changes to your models, for auditing or versioning. See how a model looked at any stage in its lifecycle, revert it to any version, or restore it after it has been destroyed. Record the user who created the version.
 
 
-[![NPM](https://nodei.co/npm/sequelize_paper_trail.png?downloads=true)](https://nodei.co/npm/sequelize_paper_trail/)
+[![NPM](https://nodei.co/npm/@olympusone/sequelize_paper_trail.png?downloads=true)](https://nodei.co/npm/@olympusone/sequelize_paper_trail/)
 
-[![node-version](https://img.shields.io/node/v/sequelize_paper_trail.svg)](https://www.npmjs.org/package/sequelize_paper_trail)
-[![npm-version](https://img.shields.io/npm/v/sequelize_paper_trail.svg)](https://www.npmjs.org/package/sequelize_paper_trail)
-[![GitHub release](https://img.shields.io/github/release/olympusone/sequelize_paper_trail.svg)](https://www.npmjs.org/package/sequelize_paper_trail)
-[![GitHub tag](https://img.shields.io/github/tag/olympusone/sequelize_paper_trail.svg)](https://www.npmjs.org/package/sequelize_paper_trail)
-[![npm-downloads](https://img.shields.io/npm/dt/sequelize_paper_trail.svg)](https://www.npmjs.org/package/sequelize_paper_trail)
+[![node-version](https://img.shields.io/node/v/@olympusone/sequelize_paper_trail.svg)](https://www.npmjs.org/package/@olympusone/sequelize_paper_trail)
+[![npm-version](https://img.shields.io/npm/v/@olympusone/sequelize_paper_trail.svg)](https://www.npmjs.org/package/@olympusone/sequelize_paper_trail)
+[![GitHub release](https://img.shields.io/github/release/olympusone/sequelize_paper_trail.svg)](https://www.npmjs.org/package/olympusone/sequelize_paper_trail)
+[![GitHub tag](https://img.shields.io/github/tag/olympusone/sequelize_paper_trail.svg)](https://www.npmjs.org/package/olympusone/sequelize_paper_trail)
+[![npm-downloads](https://img.shields.io/npm/dt/@olympusone/sequelize_paper_trail.svg)](https://www.npmjs.org/package/@olympusone/sequelize_paper_trail)
 
 [![license](https://img.shields.io/github/license/olympusone/sequelize_paper_trail.svg)](https://github.com/olympusone/sequelize_paper_trail/blob/master/LICENSE)
 
